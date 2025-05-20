@@ -1,26 +1,34 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import Login from './pages/Login';
+import LerQRCode from './pages/LerQRCode';
+import { ToastProvider } from './components/ui/use-toast';
+import ProtectedRoute from './components/ProtectedRoute';
+import IconGradients from './components/ui/IconGradients';
 
-function App() {
+const App: React.FC = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ToastProvider>
+      <Router>
+        {/* Definições de gradientes SVG para ícones */}
+        <IconGradients />
+        
+        <Routes>
+          {/* Rota pública para login */}
+          <Route path="/login" element={<Login />} />
+
+          {/* Rotas protegidas que requerem autenticação */}
+          <Route element={<ProtectedRoute />}>
+            <Route path="/ler-qrcode" element={<LerQRCode />} />
+            <Route path="/" element={<Navigate to="/ler-qrcode" />} />
+          </Route>
+
+          {/* Rota fallback para qualquer URL desconhecida */}
+          <Route path="*" element={<Navigate to="/" />} />
+        </Routes>
+      </Router>
+    </ToastProvider>
   );
-}
+};
 
 export default App;

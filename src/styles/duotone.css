@@ -1,0 +1,68 @@
+/* Estilos específicos para ícones Font Awesome Duotone */
+
+/* Estilos gerais para ícones duotone */
+.fa-duotone {
+  --fa-primary-opacity: 1;
+  --fa-secondary-opacity: 0.6;
+  --fa-primary-color: currentColor;
+  --fa-secondary-color: rgba(currentColor, 0.6);
+}
+
+/* Variações de cor para ícones duotone */
+.fa-duotone.primary {
+  --fa-primary-color: #2563eb;
+  --fa-secondary-color: rgba(37, 99, 235, 0.4);
+}
+
+.fa-duotone.success {
+  --fa-primary-color: #22c55e;
+  --fa-secondary-color: rgba(34, 197, 94, 0.4);
+}
+
+.fa-duotone.warning {
+  --fa-primary-color: #f59e0b;
+  --fa-secondary-color: rgba(245, 158, 11, 0.4);
+}
+
+.fa-duotone.error {
+  --fa-primary-color: #ef4444;
+  --fa-secondary-color: rgba(239, 68, 68, 0.4);
+}
+
+/* Seção para compatibilidade do estilo duotone com a estrutura do Font Awesome */
+.svg-inline--fa .fa-primary {
+  fill: var(--fa-primary-color);
+  opacity: var(--fa-primary-opacity);
+}
+
+.svg-inline--fa .fa-secondary {
+  fill: var(--fa-secondary-color);
+  opacity: var(--fa-secondary-opacity);
+}
+
+/* Ajustes para ícones nos inputs */
+.input-left-icon svg,
+.input-right-icon svg {
+  width: 16px !important;
+  height: 16px !important;
+  font-size: 16px !important;
+}
+
+/* Corrigir sobreposição nos inputs */
+.input-left-icon,
+.input-right-icon {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 24px !important;
+  height: 24px !important;
+  line-height: 1 !important;
+}
+
+/* Garantir que o ícone não ultrapasse o tamanho do container */
+.input-left-icon svg,
+.input-right-icon svg {
+  max-width: 100% !important;
+  max-height: 100% !important;
+  overflow: visible !important;
+} 
