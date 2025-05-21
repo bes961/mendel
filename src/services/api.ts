@@ -5,7 +5,7 @@ import axios, { AxiosError, AxiosResponse } from 'axios';
  */
 const api = axios.create({
     baseURL: 'https://2035-189-109-78-139.ngrok-free.app',
-    // withCredentials: true,
+    withCredentials: true,
     headers: {
         'Accept': 'application/json',
         'Content-Type': 'application/json'
