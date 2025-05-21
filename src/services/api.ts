@@ -4,7 +4,7 @@ import axios, { AxiosError, AxiosResponse } from 'axios';
  * Configuração da instância do Axios para comunicação com a API
  */
 const api = axios.create({
-    baseURL: 'https://mendelapi.domcloud.dev/',
+    baseURL: 'https://2035-189-109-78-139.ngrok-free.app',
     // withCredentials: true,
     headers: {
         'Accept': 'application/json',
